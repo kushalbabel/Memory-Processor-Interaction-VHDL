@@ -1,0 +1,49 @@
+Running: /home/mukund/Downloads/DLD_INSTALLATIONS/dl2/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/mukund/scopemaxx_project/scopemaxx_tb3_isim_beh.exe -prj /home/mukund/scopemaxx_project/scopemaxx_tb3_beh.prj work.scopemaxx_tb3 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/mukund/scopemaxx_project/ipcore_dir/myfifo9.vhd" into library work
+Parsing VHDL file "/home/mukund/scopemaxx_project/ipcore_dir/myfifo128.vhd" into library work
+Parsing VHDL file "/home/mukund/scopemaxx_project/random_number_generator.vhd" into library work
+Parsing VHDL file "/home/mukund/scopemaxx_project/smart_arbiter.vhd" into library work
+Parsing VHDL file "/home/mukund/scopemaxx_project/random_generator_proc.vhd" into library work
+Parsing VHDL file "/home/mukund/scopemaxx_project/processor.vhd" into library work
+Parsing VHDL file "/home/mukund/scopemaxx_project/memory_interface.vhd" into library work
+Parsing VHDL file "/home/mukund/scopemaxx_project/memory.vhd" into library work
+Parsing VHDL file "/home/mukund/scopemaxx_project/lane_interface.vhd" into library work
+Parsing VHDL file "/home/mukund/scopemaxx_project/scopemaxx_top.vhd" into library work
+Parsing VHDL file "/home/mukund/scopemaxx_project/scopemaxx_tb3.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 104656 KB
+Fuse CPU Usage: 1450 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity random_generator_proc [\random_generator_proc(9)\]
+Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_ss [\fifo_generator_v9_3_bhv_ss(5,12...]
+Compiling architecture behavioral of entity fifo_generator_v9_3_conv [\fifo_generator_v9_3_conv(1,0,5,...]
+Compiling architecture behavioral of entity fifo_generator_v9_3 [\fifo_generator_v9_3(1,0,5,"Blan...]
+Compiling architecture myfifo128_a of entity myfifo128 [myfifo128_default]
+Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_ss [\fifo_generator_v9_3_bhv_ss(5,9,...]
+Compiling architecture behavioral of entity fifo_generator_v9_3_conv [\fifo_generator_v9_3_conv(1,0,5,...]
+Compiling architecture behavioral of entity fifo_generator_v9_3 [\fifo_generator_v9_3(1,0,5,"Blan...]
+Compiling architecture myfifo9_a of entity myfifo9 [myfifo9_default]
+Compiling architecture behavioral of entity lane_interface [lane_interface_default]
+Compiling architecture behavioral of entity processor [processor_default]
+Compiling architecture behavioral of entity smart_arbiter [smart_arbiter_default]
+Compiling architecture behavioral of entity memory_interface [memory_interface_default]
+Compiling architecture behavioral of entity random_number_generator [\random_number_generator(128)\]
+Compiling architecture behavioral of entity memory [memory_default]
+Compiling architecture behavioral of entity scopemaxx_top [scopemaxx_top_default]
+Compiling architecture behavior of entity scopemaxx_tb3
+Time Resolution for simulation is 1ps.
+Waiting for 7 sub-compilation(s) to finish...
+Compiled 38 VHDL Units
+Built simulation executable /home/mukund/scopemaxx_project/scopemaxx_tb3_isim_beh.exe
+Fuse Memory Usage: 680744 KB
+Fuse CPU Usage: 1850 ms
+GCC CPU Usage: 3020 ms

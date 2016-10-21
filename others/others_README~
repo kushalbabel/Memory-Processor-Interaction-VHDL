@@ -1,0 +1,28 @@
+efficiency_graph
+--------------------
+The code has been written entirely by us. 
+
+Instruction to run :- Just run make command after doing cd to that folder.
+
+Code
+explanation:- Code needs size of packet as input and it outputs various
+efficiency for time processing ranging from 1 to (size of packet +9) 9
+because of transfer overhead. Code simulates working of processor. Each
+lane takes certain amount of time to write a word due to different lane
+size and lane speed.At a time, processor works only on one lane. The
+code schedules when lane has completely written a word and when
+processor finishes writing it in memory it notes the time delay. That
+lane has to be idle for that amount of time. Now, it might happen that
+there are no words to write if processing is done too fast.The code also
+takes note for how much time processor-memory link is idle. This
+simulation is run for 100000 seconds to get a good good idea about
+efficiency.
+Code outputs:- time processing, lane efficiency, processor-link efficiency
+
+-------------------------------------------------------------------------------------------------
+
+stage1_report.pdf
+--------------------
+It is the stage-1 report that we had added.
+
+-------------------------------------------------------------------------------------------------

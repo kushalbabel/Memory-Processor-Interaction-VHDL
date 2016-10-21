@@ -1,0 +1,58 @@
+The description of the test bench and the local variable is as follows :
+
+1.) clk -> 1Ghz clock of processor
+2.) rst -> reset signal
+3.) usr_en(7 to 0) -> these are request giving enable signals given as input to the top module.
+                     usr_en(0 to 3) are enable signals of write requests for the four users.
+                     usr_en(4 to 7) are enable signals of read requests for four users.
+
+4.) dataOBus7 to dataOBus0 -> these are buses for users to give their read and write requests to device.
+             dataOBus0 to dataOBus3 are 127 downto 0 vectors to give write request words as input to device.
+             dataOBus4 to dataOBus7 are 8 downto 0 vectors to give ptr (position in memory) from where to read.
+
+5.) write_ptr -> 9-bit signal which specifies the position in the memory where the word has to be written.If it is
+                 <320 only then it is valid otherwise it is invalid position of memory. If you try to read or write
+                 at write_ptr >320, it will not be successful.
+
+
+6.) usr_wr_res0 to usr_wr_res3 -> these are 2 bit vectors which shows whether the write request for corresponding
+               users  was successful or not. Format of usr_wr_res is as follows:
+                10 => write was not successful
+                11=> write was successful
+                0-=> it is a garbage value and should be ignored
+
+7.) usr_rd_res0 to usr_rd_res3 -> these are 2 bit vectors which shows whether the read request for corresponding
+               users  was successful or not. Format of usr_rd_res is as follows: 
+               10 => read was not successful
+               11=> read was successful
+               0-=> it is a garbage value and should be ignored
+
+8.) rd_0 to rd_3 -> these are actual words which were read corresponding to a user read request. Their validity is
+                    is given by the values of usr_rd_res.
+
+9.) clk2 -> 250 MHz clock of memory.
+
+HOW TO TAKE INFERENCE FROM TESTBENCH:-
+
+Example scenario-1.) put usr_en="00000001" and dataOBus0=<any desired value, say V> for one clock cycle and its zero otherwise and set 
+             write_ptr="000000001" simultaneously to write 'V' at position "000000001". Now try to read position
+             "000000001" by following commands:-
+              usr_en="10000000" and dataOBus7="000000001" for one clock cycle.
+              In this case read request will be successful (you can observe it by seeing "11" in testbench for 
+              usr_wr_res0 ans usr_rd_res3 in simulation). If you try to read at any other value than "000000001"
+              you will get usr_rd_res3 in testbench as "10" (i.e unsuccessful) which show that system is maintaining
+              correct states about which memory location is empty and which is not.
+Above scenario is implemented in testbench1.vhd.
+Other scenarios are include in other testbenches and are explained at the top of testbench in comments.
+
+
+Note:- 1.) every time you see rd_0 to rd_3 when usr_rd_res was successful, you will see a random value and not
+       the value written earlier because we are not really 'storing' words in memory (as we were instructed by Prof. Ashwin
+       	that we don't have to make actual memory banks).
+       We are just maintaining the state of every memory location whether it is empty or not.
+       
+       2.) Initially we were writing words during a write request from user at any random position (as suggested by
+        Prof. Ashwin), but for testing purposes we have introduced write_ptr to know where exactly the word has been 
+        written.
+
+

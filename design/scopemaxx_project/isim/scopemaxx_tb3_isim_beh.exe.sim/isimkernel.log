@@ -1,0 +1,29 @@
+Command line:
+   scopemaxx_tb3_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  59874
+
+Thu Apr  7 02:25:07 2016
+
+
+ Elaboration Time: 0.12 sec
+
+ Current Memory Usage: 230.302 Meg
+
+ Total Signals          : 4248
+ Total Nets             : 33187
+ Total Signal Drivers   : 1553
+ Total Blocks           : 239
+ Total Primitive Blocks : 131
+ Total Processes        : 637
+ Total Traceable Variables  : 2517
+ Total Scalar Nets and Variables : 36702
+Total Line Count : 1354
+
+ Total Simulation Time: 0.2 sec
+
+ Current Memory Usage: 305.803 Meg
+
+Thu Apr  7 02:25:15 2016
+
